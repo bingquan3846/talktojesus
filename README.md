@@ -1,1 +1,1 @@
-This is symfony project with api platform and ai bundle 
+# This is symfony project with ai bundle
