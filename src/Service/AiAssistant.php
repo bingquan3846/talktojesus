@@ -17,11 +17,7 @@ class AiAssistant
 
     public function ask(string $question): string
     {
-        $messages = new MessageBag();
-        $messages->add(new Message($question));
-
-        $response = $this->agent->call($messages);
-
-        return $response->getContent();
+        $messages = new MessageBag(Message::ofUser($question));
+        return $this->agent->call($messages)->getContent();
     }
 }
