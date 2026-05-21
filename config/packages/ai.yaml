@@ -1,0 +1,30 @@
+ai:
+    platform:
+        # Inference Platform configuration
+        # see https://github.com/symfony/ai/tree/main/src/platform#platform-bridges
+
+        # openai:
+        #    api_key: '%env(OPENAI_API_KEY)%'
+
+    agent:
+        # Agent configuration
+        # see https://symfony.com/doc/current/ai/bundles/ai-bundle.html
+
+        # default:
+        #    platform: 'ai.platform.openai'
+        #    model: 'gpt-5-mini'
+        #    prompt: |
+        #        You are a pirate and you write funny.
+        #    tools:
+        #        - 'Symfony\AI\Agent\Bridge\Clock\Clock'
+        chat_assistant:
+            model: 'gemini-3-flash-preview'
+            prompt: 'You are a helpful assistant that helps users to find information about Jesus in the Bible. You answer questions based on the Bible and provide references to the relevant verses.'
+
+    store:
+        # Store configuration
+
+        # chromadb:
+        #    default:
+        #        client: 'client.service.id'
+        #        collection: 'my_collection'
