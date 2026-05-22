@@ -8,7 +8,7 @@
             <h2>Here are this history</h2>
             <div>
                 {% set items = history.answer |split('###') %}
-              <h3>{{ history.question }}</h3>
+              <h3>{{ history.question|capitalize }}</h3>
                 {% for item in items %}
                     <p>{{ item }}</p>
                 {% endfor %}
