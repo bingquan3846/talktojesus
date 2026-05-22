@@ -7,10 +7,11 @@
     <div id="messages" data-chat-target="messages" class="h-64 overflow-y-auto border p-4 mb-4">
         <!-- Messages will appear here -->
     </div>
-    
+
     <form data-action="submit->chat#sendMessage">
         <input type="text" data-chat-target="input" placeholder="Type a message..." class="border p-2 w-full" width="100px">
         <button type="submit">Send</button>
     </form>
+    <a href="{{ path('app_chat_histories') }}" target="_blank"> {{ 'show all histories' | capitalize }} </a>
 </div>
 {% endblock %}
