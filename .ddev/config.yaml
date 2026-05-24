@@ -4,7 +4,7 @@ docroot: public
 php_version: "8.4"
 webserver_type: nginx-fpm
 xdebug_enabled: false
-additional_hostnames: []
+additional_hostnames: [en, zh]
 additional_fqdns: []
 database:
     type: mariadb

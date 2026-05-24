@@ -9,9 +9,9 @@
     </div>
 
     <form data-action="submit->chat#sendMessage">
-        <input type="text" data-chat-target="input" placeholder="Type a message..." class="border p-2 w-full" width="100px">
-        <button type="submit">Send</button>
+        <input type="text" data-chat-target="input" placeholder="{{ 'type_message'|trans }}" class="border p-2 w-full" width="100px">
+        <button type="submit">{{ 'send'|trans({}, 'messages', 'zh') }}</button>
     </form>
-    <a href="{{ path('app_chat_histories') }}" target="_blank"> {{ 'show all histories' | capitalize }} </a>
+    <a href="{{ path('app_chat_histories') }}" target="_blank"> {{ 'histories'|trans()|capitalize }} </a>
 </div>
 {% endblock %}

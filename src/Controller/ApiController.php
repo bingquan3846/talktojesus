@@ -57,6 +57,6 @@ final class ApiController extends AbstractController
        $entityManager->persist($history);
        $entityManager->flush();
 
-       return new JsonResponse($data);
+       return new JsonResponse('success');
    }
 }
