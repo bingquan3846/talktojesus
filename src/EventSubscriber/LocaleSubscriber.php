@@ -38,5 +38,4 @@ class LocaleSubscriber implements EventSubscriberInterface
             $request->setLocale($this->defaultLocale);
         }
     }
-
 }
