@@ -6,6 +6,7 @@ export default class extends Controller {
     async sendMessage(event) {
         event.preventDefault();
         const content = this.inputTarget.value;
+        console.log(this.inputTarget.value);
         if (!content) return;
         // Create an empty AI message element
         const aiMessage = document.createElement('div');

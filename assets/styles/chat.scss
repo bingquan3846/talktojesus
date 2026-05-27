@@ -1,0 +1,15 @@
+@import "colors";
+@import "space";
+
+#chat-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .form {
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        left: calc(50% - 200px);
+    }
+}

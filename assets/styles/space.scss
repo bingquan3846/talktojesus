@@ -1,0 +1,10 @@
+// Define the range
+$max-value: 40;
+
+// Use a loop to generate your map or variables
+$spacers: ();
+
+@for $i from 0 through $max-value {
+    // Creating a map of values
+    $spacers: map-merge($spacers, ($i: #{$i}px));
+}
