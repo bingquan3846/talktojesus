@@ -9,7 +9,7 @@
                 <ul>
                     {% for history in histories %}
                         <li>
-                            <p>{{ history.question|e|capitalize }} <br/>
+                            <p>{{ history.question|capitalize }} <br/>
                             {{ history.answer|u.truncate(200, '...') }} <br/>
                                 <a href="{{ path('app_chat_history', {'id': history.id}) }}" target="_blank">Read more</a>
                             </p>

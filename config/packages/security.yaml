@@ -41,7 +41,8 @@ security:
 
     # Note: Only the *first* matching rule is applied
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+         - { path: ^/chat/history/, roles: ROLE_USER }
+         - { path: ^/chat/histories, roles: ROLE_USER }
         # - { path: ^/profile, roles: ROLE_USER }
 
 when@test:

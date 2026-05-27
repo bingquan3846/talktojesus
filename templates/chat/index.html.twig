@@ -10,8 +10,10 @@
 
     <form data-action="submit->chat#sendMessage">
         <input type="text" data-chat-target="input" placeholder="{{ 'type_message'|trans }}" class="border p-2 w-full" width="100px">
-        <button type="submit">{{ 'send'|trans({}, 'messages', 'zh') }}</button>
+        <button type="submit">{{ 'send'|trans() }}</button>
     </form>
+    {% if app.user %}
     <a href="{{ path('app_chat_histories') }}" target="_blank"> {{ 'histories'|trans()|capitalize }} </a>
+    {% endif %}
 </div>
 {% endblock %}
