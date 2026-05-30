@@ -2,14 +2,15 @@ import { Controller } from '@hotwired/stimulus';
 
 export default class extends Controller {
     static targets = ["messages", "input"];
+    static values = { default: String }
 
     async sendMessage(event) {
         event.preventDefault();
         const content = this.inputTarget.value;
-        console.log(this.inputTarget.value);
-        if (!content) return;
+        if (content === this.defaultValue) return;
         // Create an empty AI message element
         const aiMessage = document.createElement('div');
+        this.messagesTarget.innerHTML = '';
         this.messagesTarget.appendChild(aiMessage);
 
         const response = await fetch('/api/ask', {
@@ -38,7 +39,7 @@ export default class extends Controller {
                     continue;
                 }
 
-                let textChunk = line;
+                let textChunk = line.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
                 try {
                     const payload = JSON.parse(line);
                     textChunk = payload.text ?? line;
@@ -67,6 +68,19 @@ export default class extends Controller {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ question: content, answer: answer })
             });
+        }
+    }
+
+    onFocus(event) {
+        if (event.currentTarget.value.trim() === this.defaultValue) {
+            event.currentTarget.value = '';
+        }
+    }
+
+    // This runs when the user clicks away
+    onBlur(event) {
+        if (event.currentTarget.value.trim() === '') {
+            event.currentTarget.value = this.defaultValue;
         }
     }
 }

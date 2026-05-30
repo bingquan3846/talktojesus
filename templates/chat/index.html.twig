@@ -3,18 +3,15 @@
 {% block title %}Chat with jesus!{% endblock %}
 
 {% block body %}
-<div id="chat-container" data-controller="chat">
-    <div class="container form chat">
-    <div id="messages" data-chat-target="messages" class="h-64 overflow-y-auto border p-4 mb-4">
-        <!-- Messages will appear here -->
+
+<div id="chat-container" data-controller="chat" data-chat-default-value="{{ 'type_message'|trans }}">
+    <div id="messages" data-chat-target="messages">
     </div>
 
+    <div class="container form chat">
     <form data-action="submit->chat#sendMessage">
         <div class="form-group mb-3">
-            <label>
-                {{ 'type_message'|trans }}
-            </label>
-            <textarea  data-chat-target="input" class="border p-2 w-full" rows="15" cols="40"></textarea>
+            <textarea  data-action="focus->chat#onFocus blur->chat#onBlur" data-chat-target="input" class="border p-2 w-full" rows="5" cols="40" >{{ 'type_message'|trans }}</textarea>
         </div>
         <div class="form-group mb-3">
         <button type="submit">{{ 'send'|trans() }}</button>

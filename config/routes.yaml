@@ -9,3 +9,10 @@
 
 controllers:
     resource: routing.controllers
+
+
+startpage:
+    path: /
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'app_chat'
