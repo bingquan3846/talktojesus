@@ -1,5 +1,5 @@
-@import "tcolor.scss";
-@import "space.scss";
+@use "tcolor.scss";
+@use "space.scss";
 
 #chat-container {
     display: flex;
@@ -20,8 +20,8 @@
         max-width: 800px;
         margin: 0 auto;
         overflow: auto;
-        background-color: $white;
+        background-color: tcolor.$white;
         border-radius: 15px;
-        border: 3px solid $skeyblue;
+        border: 3px solid tcolor.$skeyblue;
     }
 }

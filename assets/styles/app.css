@@ -1,0 +1,188 @@
+@charset "UTF-8";
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+body {
+  background-color: skyblue;
+  font-size: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.header {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+}
+.header a {
+  text-decoration: none;
+  font-size: 20px;
+  border: 2px solid #04AA6D;
+  font-weight: bold;
+  color: #04AA6D;
+  background: #ffffff;
+  padding: 5px 10px;
+}
+.header a:hover {
+  color: #ffffff;
+  background: #04AA6D;
+}
+
+.form {
+  max-width: 313px;
+  margin: 0 auto;
+  position: absolute;
+  top: calc(50% - 156px);
+  left: calc(50% - 156px);
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  border: 2px solid #04AA6D;
+}
+.form .title {
+  font-size: 28px;
+  text-transform: uppercase;
+}
+.form a {
+  font-size: 16px;
+}
+.form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+.form .form-group input {
+  font-size: 16px;
+  padding: 10px;
+}
+.form .form-group input[type=text] {
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+.form .form-group button[type=submit] {
+  font-size: 16px;
+  background-color: #04AA6D;
+  color: #ffffff;
+  border-color: #04AA6D;
+  padding: 12px;
+}
+.form .alert.alert-danger:has(*) {
+  color: #FF0000;
+  margin-bottom: 15px;
+}
+.form .alert.alert-danger:has(*) * {
+  font-size: 16px;
+}
+.form .alert.alert-danger:has(*) li {
+  list-style: none;
+}
+.form .checkbox label {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  cursor: pointer;
+}
+.form .checkbox label::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  margin-right: 10px;
+  transition: background 0.2s;
+}
+.form .checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 20px;
+}
+.form .checkbox input:checked + label::before {
+  background-color: #04AA6D;
+  border-color: #04AA6D;
+  content: "✓";
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form .checkbox label {
+  font-size: 1rem;
+}
+
+#chat-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  height: 100vh;
+}
+#chat-container .form {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  left: calc(50% - 200px);
+  top: 50%;
+}
+#chat-container #messages div:has(*) {
+  height: 50vh;
+  padding: 20px 50px;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: auto;
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 3px solid skyblue;
+}
+
+/*# sourceMappingURL=app.css.map */

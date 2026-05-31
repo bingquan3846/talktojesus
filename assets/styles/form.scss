@@ -1,5 +1,6 @@
-@import "tcolor.scss";
-@import "space.scss";
+@use "tcolor.scss";
+@use "space.scss";
+@use "sass:map";
 
 .form {
     max-width: 313px;
@@ -7,47 +8,47 @@
     position: absolute;
     top: calc(50% - 156px);
     left: calc(50% - 156px);
-    background: $white;
-    padding: map-get($spacers, 20);
-    border-radius: map-get($spacers, 15);
-    border: 2px solid $green;
+    background: tcolor.$white;
+    padding: map.get(space.$spacers, 20);
+    border-radius: map.get(space.$spacers, 15);
+    border: 2px solid tcolor.$green;
     .title {
-        font-size: map-get($spacers, 28);
+        font-size: map.get(space.$spacers, 28);
         text-transform: uppercase;
     }
     a {
-        font-size: map-get($spacers, 16);
+        font-size: map.get(space.$spacers, 16);
     }
     .form-group {
         display: flex;
         flex-direction: column;
-        margin-bottom: map-get($spacers, 10);
-        gap: map-get($spacers, 10);
+        margin-bottom: map.get(space.$spacers, 10);
+        gap: map.get(space.$spacers, 10);
         input {
-            font-size: map-get($spacers, 16);
-            padding: map-get($spacers, 10);
+            font-size: map.get(space.$spacers, 16);
+            padding: map.get(space.$spacers, 10);
         }
         input[type=text] {
-            padding: map-get($spacers, 12);
-            margin: map-get($spacers, 10) 0;
+            padding: map.get(space.$spacers, 12);
+            margin: map.get(space.$spacers, 10) 0;
             box-sizing: border-box;
         }
         button[type="submit"] {
-            font-size: map-get($spacers, 16);
-            background-color: $green;
-            color: $white;
-            border-color: $green;
-            padding: map-get($spacers, 12);
+            font-size: map.get(space.$spacers, 16);
+            background-color: tcolor.$green;
+            color: tcolor.$white;
+            border-color: tcolor.$green;
+            padding: map.get(space.$spacers, 12);
         }
     }
 
 
     .alert {
         &.alert-danger:has(*) {
-            color: $red;
-            margin-bottom: map-get($spacers, 15);
+            color: tcolor.$red;
+            margin-bottom: map.get(space.$spacers, 15);
             * {
-                font-size: map-get($spacers, 16);
+                font-size: map.get(space.$spacers, 16);
             }
             li {
                 list-style: none;
@@ -67,7 +68,7 @@
             content: '';
             width: 20px;
             height: 20px;
-            border: 2px solid $black; // Your custom border
+            border: 2px solid tcolor.$black; // Your custom border
             border-radius: 4px;
             margin-right: 10px;
             transition: background 0.2s;
@@ -77,11 +78,11 @@
             opacity: 0;
             cursor: pointer;
             width: 100%;
-            height: map-get($spacers, 20);
+            height: map.get(space.$spacers, 20);
         }
         input:checked + label::before {
-            background-color: $green;
-            border-color:  $green;
+            background-color: tcolor.$green;
+            border-color:  tcolor.$green;
             // Add a checkmark icon or unicode character here
             content: '✓';
             color: white;

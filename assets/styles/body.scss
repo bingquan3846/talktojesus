@@ -1,12 +1,34 @@
-@import "tcolor.scss";
-@import "space.scss";
+@use "tcolor.scss";
+@use "space.scss";
+@use "sass:map";
 
 body {
-    background-color: $skeyblue;
-    font-size: map-get($spacers, 20);
+    background-color: tcolor.$skeyblue;
+    font-size: map.get(space.$spacers, 20);
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
-    margin-bottom: map-get($spacers, 10);
+    margin-bottom: map.get(space.$spacers, 10);
 }
+
+
+.header {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    a {
+        text-decoration: none;
+        font-size: map.get(space.$spacers, 20);
+        border: 2px solid tcolor.$green;
+        font-weight: bold;
+        color: tcolor.$green;
+        background: tcolor.$white;
+        padding:5px 10px;
+        &:hover {
+            color: tcolor.$white;
+            background: tcolor.$green;
+        }
+    }
+}
+

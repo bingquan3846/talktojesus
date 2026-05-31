@@ -1,3 +1,4 @@
+@use "sass:map";
 // Define the range
 $max-value: 40;
 
@@ -6,5 +7,5 @@ $spacers: ();
 
 @for $i from 0 through $max-value {
     // Creating a map of values
-    $spacers: map-merge($spacers, ($i: #{$i}px));
+    $spacers: map.merge($spacers, ($i: #{$i}px));
 }

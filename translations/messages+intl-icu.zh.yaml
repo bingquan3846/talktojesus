@@ -1,3 +1,5 @@
 send: "发送"
 histories: "显示所有历史记录"
 type_message: "输入消息……"
+login: "登录"
+logout: "注销"
