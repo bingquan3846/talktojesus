@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Search in wikipedia{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Search {{ query }} , found Results:  ✅</h1>
+    <p>
+        <ul>
+            <li>
+                {{ allItems|nl2br }}
+            </li>
+            <li>
+                {{ articles|nl2br }}
+            </li>
+        </ul>
+    </p>
+</div>
+{% endblock %}

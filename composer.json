@@ -13,6 +13,7 @@
         "symfony/ai-agent": "^0.9.0",
         "symfony/ai-bundle": "^0.9.0",
         "symfony/ai-gemini-platform": "^0.9.0",
+        "symfony/ai-wikipedia-tool": "^0.9.0",
         "symfony/asset": "8.0.*",
         "symfony/asset-mapper": "8.0.*",
         "symfony/console": "8.0.*",
