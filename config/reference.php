@@ -1785,6 +1785,15 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     },
  *     embed_sourcemap?: bool|Param|null, // Deprecated: Option "embed_sourcemap" at "symfonycasts_sass.embed_sourcemap" is deprecated. Use "sass_options.embed_source_map" instead". // Default: null
  * }
+ * @psalm-type KnpuOauth2ClientConfig = array{
+ *     http_client?: scalar|Param|null, // Service id of HTTP client to use (must implement GuzzleHttp\ClientInterface) // Default: null
+ *     http_client_options?: array{
+ *         timeout?: int|Param,
+ *         proxy?: scalar|Param|null,
+ *         verify?: bool|Param, // Use only with proxy option set
+ *     },
+ *     clients?: array<string, array<string, mixed>>,
+ * }
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,
  *     parameters?: ParametersConfig,
@@ -1799,6 +1808,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     security?: SecurityConfig,
  *     symfonycasts_verify_email?: SymfonycastsVerifyEmailConfig,
  *     symfonycasts_sass?: SymfonycastsSassConfig,
+ *     knpu_oauth2_client?: KnpuOauth2ClientConfig,
  *     "when@dev"?: array{
  *         imports?: ImportsConfig,
  *         parameters?: ParametersConfig,
@@ -1815,6 +1825,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         security?: SecurityConfig,
  *         symfonycasts_verify_email?: SymfonycastsVerifyEmailConfig,
  *         symfonycasts_sass?: SymfonycastsSassConfig,
+ *         knpu_oauth2_client?: KnpuOauth2ClientConfig,
  *     },
  *     "when@prod"?: array{
  *         imports?: ImportsConfig,
@@ -1830,6 +1841,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         security?: SecurityConfig,
  *         symfonycasts_verify_email?: SymfonycastsVerifyEmailConfig,
  *         symfonycasts_sass?: SymfonycastsSassConfig,
+ *         knpu_oauth2_client?: KnpuOauth2ClientConfig,
  *     },
  *     "when@test"?: array{
  *         imports?: ImportsConfig,
@@ -1846,6 +1858,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         security?: SecurityConfig,
  *         symfonycasts_verify_email?: SymfonycastsVerifyEmailConfig,
  *         symfonycasts_sass?: SymfonycastsSassConfig,
+ *         knpu_oauth2_client?: KnpuOauth2ClientConfig,
  *     },
  *     ...<string, ExtensionType|array{ // extra keys must follow the when@%env% pattern or match an extension alias
  *         imports?: ImportsConfig,
