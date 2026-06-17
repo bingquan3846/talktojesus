@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use KnpU\OAuth2ClientBundle\Client\ClientRegistry;
+use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use League\OAuth2\Client\Provider\GoogleUser;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,7 +17,7 @@ final class GoogleController extends AbstractController
     {
         return $clientRegistry->getClient('google')->redirect([
             'profile', 'email' // the scopes you want to access
-        ]);
+        ], []);
     }
 
     #[Route('/connect/google/check', name: 'connect_google_check')]
@@ -30,12 +31,16 @@ final class GoogleController extends AbstractController
 
             // do something with all this new power!
             // e.g. $name = $user->getFirstName();
-            var_dump($user); die;
+            $email = $user->getEmail();
+
+            return $this->redirectToRoute('app_register', ['email' => $email]);
             // ...
         } catch (IdentityProviderException $e) {
             // something went wrong!
             // probably you should return the reason to the user
-            var_dump($e->getMessage()); die;
+
+            return new Response($e->getMessage());
+           
         }
     }
 }
