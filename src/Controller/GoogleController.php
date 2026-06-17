@@ -29,18 +29,13 @@ final class GoogleController extends AbstractController
             /** @var GoogleUser $user */
             $user = $client->fetchUser();
 
-            // do something with all this new power!
-            // e.g. $name = $user->getFirstName();
             $email = $user->getEmail();
 
             return $this->redirectToRoute('app_register', ['email' => $email]);
-            // ...
-        } catch (IdentityProviderException $e) {
-            // something went wrong!
-            // probably you should return the reason to the user
+
+        } catch (IdentityProviderException | \Exception $e) {
 
             return new Response($e->getMessage());
-           
         }
     }
 }
