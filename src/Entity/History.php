@@ -57,7 +57,7 @@ class History
 
     public function getAnswer(): ?string
     {
-        return $this->answer;
+        return html_entity_decode($this->answer);
     }
 
     public function setAnswer(?string $answer): static
