@@ -13,8 +13,8 @@ use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
 corepack_enable: false
-router_http_port: "8080"
-router_https_port: "8443"
+#router_http_port: "8080"
+#router_https_port: "8443"
 
 # Key features of DDEV's config.yaml:
 

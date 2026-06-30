@@ -10,7 +10,7 @@
                 {% set items = history.answer |split('###') %}
               <h3>{{ history.question|capitalize }}</h3>
                 {% for item in items %}
-                    <p>{{ item }}</p>
+                    <p>{{ item |raw }}</p>
                 {% endfor %}
             </div>
         {%  endif %}
