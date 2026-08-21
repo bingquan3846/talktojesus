@@ -1,0 +1,40 @@
+#chat-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column-reverse;
+  height: 100vh;
+}
+#chat-container .form {
+  max-width: 600px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  left: calc(50% - 200px);
+  margin-top: 50px;
+  top: unset;
+  left: unset;
+}
+#chat-container #messages div:has(*) {
+  height: 75vh;
+  padding: 20px 50px;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: auto;
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 3px solid #87CEEBFF;
+}
+
+#chat-histories {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+#chat-histories ul {
+  list-style: none;
+  padding: 0;
+}
+#chat-histories ul li {
+  margin: 15px 0;
+}

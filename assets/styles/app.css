@@ -172,18 +172,21 @@ strong {
   display: flex;
   align-items: center;
   justify-content: start;
-  flex-direction: column;
+  flex-direction: column-reverse;
   height: 100vh;
 }
 #chat-container .form {
   max-width: 600px;
   display: flex;
+  position: relative;
   flex-direction: column;
   left: calc(50% - 200px);
-  top: 50%;
+  margin-top: 50px;
+  top: unset;
+  left: unset;
 }
 #chat-container #messages div:has(*) {
-  height: 50vh;
+  height: 75vh;
   padding: 20px 50px;
   max-width: 800px;
   margin: 0 auto;
