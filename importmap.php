@@ -16,10 +16,34 @@ return [
         'path' => './assets/app.js',
         'entrypoint' => true,
     ],
+    '@symfony/stimulus-bundle' => [
+        'path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js',
+    ],
+    '@symfony/ux-vue' => [
+        'path' => './vendor/symfony/ux-vue/assets/dist/loader.js',
+    ],
     '@hotwired/stimulus' => [
         'version' => '3.2.2',
     ],
-    '@symfony/stimulus-bundle' => [
-        'path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js',
+    'vue' => [
+        'version' => '3.5.41',
+    ],
+    '@vue/runtime-dom' => [
+        'version' => '3.5.41',
+    ],
+    '@vue/compiler-dom' => [
+        'version' => '3.5.41',
+    ],
+    '@vue/shared' => [
+        'version' => '3.5.41',
+    ],
+    '@vue/runtime-core' => [
+        'version' => '3.5.41',
+    ],
+    '@vue/compiler-core' => [
+        'version' => '3.5.41',
+    ],
+    '@vue/reactivity' => [
+        'version' => '3.5.41',
     ],
 ];

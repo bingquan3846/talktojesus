@@ -1,0 +1,13 @@
+{
+    "name": "bao/bao-bundle",
+    "autoload": {
+        "psr-4": {
+            "Bao\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bao\\Tests\\": "tests/"
+        }
+    }
+}

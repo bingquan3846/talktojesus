@@ -121,7 +121,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  * }
  * @psalm-type ServicesConfig = array{
  *     _defaults?: DefaultsType,
- *     _instanceof?: InstanceofType,
+ *     _instanceof?: array<class-string, InstanceofType>,
  *     ...<string, DefinitionType|AliasType|PrototypeType|StackType|ArgumentsType|null>
  * }
  * @psalm-type ExtensionType = array<string, mixed>
@@ -1218,7 +1218,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *             servicename?: scalar|Param|null, // Overrules dbname parameter if given and used as SERVICE_NAME or SID connection parameter for Oracle depending on the service parameter.
  *             sessionMode?: scalar|Param|null, // The session mode to use for the oci8 driver
  *             server?: scalar|Param|null, // The name of a running database server to connect to for SQL Anywhere.
- *             default_dbname?: scalar|Param|null, // Override the default database (postgres) to connect to for PostgreSQL connexion.
+ *             default_dbname?: scalar|Param|null, // Override the default database (postgres) to connect to for PostgreSQL connection.
  *             sslmode?: scalar|Param|null, // Determines whether or with what priority a SSL TCP/IP connection will be negotiated with the server for PostgreSQL.
  *             sslrootcert?: scalar|Param|null, // The name of a file containing SSL certificate authority (CA) certificate(s). If the file exists, the server's certificate will be verified to be signed by one of these authorities.
  *             sslcert?: scalar|Param|null, // The path to the SSL client certificate file for PostgreSQL.
@@ -1264,7 +1264,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *                 servicename?: scalar|Param|null, // Overrules dbname parameter if given and used as SERVICE_NAME or SID connection parameter for Oracle depending on the service parameter.
  *                 sessionMode?: scalar|Param|null, // The session mode to use for the oci8 driver
  *                 server?: scalar|Param|null, // The name of a running database server to connect to for SQL Anywhere.
- *                 default_dbname?: scalar|Param|null, // Override the default database (postgres) to connect to for PostgreSQL connexion.
+ *                 default_dbname?: scalar|Param|null, // Override the default database (postgres) to connect to for PostgreSQL connection.
  *                 sslmode?: scalar|Param|null, // Determines whether or with what priority a SSL TCP/IP connection will be negotiated with the server for PostgreSQL.
  *                 sslrootcert?: scalar|Param|null, // The name of a file containing SSL certificate authority (CA) certificate(s). If the file exists, the server's certificate will be verified to be signed by one of these authorities.
  *                 sslcert?: scalar|Param|null, // The path to the SSL client certificate file for PostgreSQL.
@@ -1343,7 +1343,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *                     lock_path?: scalar|Param|null, // Default: "%kernel.cache_dir%/doctrine/orm/slc/filelock"
  *                     lock_lifetime?: scalar|Param|null, // Default: 60
  *                     type?: scalar|Param|null, // Default: "default"
- *                     lifetime?: scalar|Param|null, // Default: 0
+ *                     lifetime?: scalar|Param|null, // Default: null
  *                     service?: scalar|Param|null,
  *                     name?: scalar|Param|null,
  *                 }>,
@@ -1794,6 +1794,10 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     },
  *     clients?: array<string, array<string, mixed>>,
  * }
+ * @psalm-type VueConfig = array{
+ *     controllers_path?: scalar|Param|null, // The path to the directory where Vue controller components are stored - relevant only when using symfony/asset-mapper. // Default: "%kernel.project_dir%/assets/vue/controllers"
+ *     name_glob?: list<scalar|Param|null>,
+ * }
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,
  *     parameters?: ParametersConfig,
@@ -1809,6 +1813,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     symfonycasts_verify_email?: SymfonycastsVerifyEmailConfig,
  *     symfonycasts_sass?: SymfonycastsSassConfig,
  *     knpu_oauth2_client?: KnpuOauth2ClientConfig,
+ *     vue?: VueConfig,
  *     "when@dev"?: array{
  *         imports?: ImportsConfig,
  *         parameters?: ParametersConfig,
@@ -1826,6 +1831,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         symfonycasts_verify_email?: SymfonycastsVerifyEmailConfig,
  *         symfonycasts_sass?: SymfonycastsSassConfig,
  *         knpu_oauth2_client?: KnpuOauth2ClientConfig,
+ *         vue?: VueConfig,
  *     },
  *     "when@prod"?: array{
  *         imports?: ImportsConfig,
@@ -1842,6 +1848,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         symfonycasts_verify_email?: SymfonycastsVerifyEmailConfig,
  *         symfonycasts_sass?: SymfonycastsSassConfig,
  *         knpu_oauth2_client?: KnpuOauth2ClientConfig,
+ *         vue?: VueConfig,
  *     },
  *     "when@test"?: array{
  *         imports?: ImportsConfig,
@@ -1859,6 +1866,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         symfonycasts_verify_email?: SymfonycastsVerifyEmailConfig,
  *         symfonycasts_sass?: SymfonycastsSassConfig,
  *         knpu_oauth2_client?: KnpuOauth2ClientConfig,
+ *         vue?: VueConfig,
  *     },
  *     ...<string, ExtensionType|array{ // extra keys must follow the when@%env% pattern or match an extension alias
  *         imports?: ImportsConfig,

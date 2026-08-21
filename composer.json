@@ -1,12 +1,13 @@
 {
     "type": "project",
     "license": "proprietary",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": ">=8.4",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "bao/bao-bundle": "dev-master",
         "doctrine/doctrine-bundle": "^3.2",
         "doctrine/doctrine-migrations-bundle": "^4.0",
         "doctrine/orm": "^3.6",
@@ -29,6 +30,7 @@
         "symfony/stimulus-bundle": "^3.0",
         "symfony/translation": "8.0.*",
         "symfony/twig-bundle": "8.0.*",
+        "symfony/ux-vue": "^3.4",
         "symfony/validator": "8.0.*",
         "symfony/yaml": "8.0.*",
         "symfonycasts/sass-bundle": "^0.10.0",
@@ -45,6 +47,12 @@
         "bump-after-update": true,
         "sort-packages": true
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/*"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "App\\": "src/"

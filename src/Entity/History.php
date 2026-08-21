@@ -7,7 +7,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: HistoryRepository::class)]
-class History
+class History implements \JsonSerializable
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -78,4 +78,10 @@ class History
 
         return $this;
     }
+
+    public function jsonSerialize(): array
+    {
+        return [$this->id, $this->question, substr($this->answer,0,200)];
+    }
+
 }

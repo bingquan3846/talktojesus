@@ -3,19 +3,12 @@
 {% block title %}Chat with jesus!{% endblock %}
 
 {% block body %}
-    <div id="chat-container" data-controller="chat">
-            {%  if histories %}
-                <h2>Here are all of histories</h2>
-                <ul>
-                    {% for history in histories %}
-                        <li>
-                            <p>{{ history.question|capitalize }} <br/>
-                            {{ history.answer|u.truncate(200, '...') }} <br/>
-                                <a href="{{ path('app_chat_history', {'id': history.id}) }}" target="_blank">Read more</a>
-                            </p>
-                        </li>
-                    {% endfor %}
-                </ul>
+    <div id="chat-container">
+            {%  if initialHistories %}
+                <div {{ vue_component('HistoryList', {
+                histories: initialHistories
+            }) }}>
+                </div>
             {%  endif %}
     </div>
 {% endblock %}

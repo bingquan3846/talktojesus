@@ -24,9 +24,9 @@ final class ChatController extends AbstractController
         } else {
             $histories = $historyRepository->findAll();
         }
-
+        //dump($histories->toArray());die;
         return $this->render('chat/histories.html.twig', [
-            'histories' => $histories,
+            'initialHistories' => $histories->toArray(),
         ]);
     }
     #[Route('/chat/history/{id}', name: '_history', requirements: ['id' => '\d+'])]

@@ -1,3 +1,4 @@
+import '@symfony/ux-vue';
 import { startStimulusApp } from '@symfony/stimulus-bundle';
 
 const app = startStimulusApp();

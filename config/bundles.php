@@ -14,4 +14,6 @@ return [
     SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle::class => ['all' => true],
     Symfonycasts\SassBundle\SymfonycastsSassBundle::class => ['all' => true],
     KnpU\OAuth2ClientBundle\KnpUOAuth2ClientBundle::class => ['all' => true],
+    Bao\BaoBundle::class => ['all' => true],
+    Symfony\UX\Vue\VueBundle::class => ['all' => true],
 ];
