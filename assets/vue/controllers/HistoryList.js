@@ -13,7 +13,7 @@ export default {
                     h('p', [
                         h('strong', item[1]),
                         h('br'),
-                        item[2]
+                        h('span', { innerHTML: item[2] })
                     ])
                 ])
             ))

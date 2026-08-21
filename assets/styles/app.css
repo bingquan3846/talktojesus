@@ -56,6 +56,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 10px;
 }
 
+b {
+  font-weight: bold;
+}
+
 .header {
   position: fixed;
   right: 10px;
@@ -73,6 +77,10 @@ h1, h2, h3, h4, h5, h6 {
 .header a:hover {
   color: #ffffff;
   background: #04AA6D;
+}
+
+strong {
+  font-weight: bold;
 }
 
 .form {
@@ -183,6 +191,19 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #ffffff;
   border-radius: 15px;
   border: 3px solid skyblue;
+}
+
+#chat-histories {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+#chat-histories ul {
+  list-style: none;
+  padding: 0;
+}
+#chat-histories ul li {
+  margin: 15px 0;
 }
 
 /*# sourceMappingURL=app.css.map */

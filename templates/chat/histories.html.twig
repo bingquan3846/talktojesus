@@ -3,7 +3,7 @@
 {% block title %}Chat with jesus!{% endblock %}
 
 {% block body %}
-    <div id="chat-container">
+    <div id="chat-histories">
             {%  if initialHistories %}
                 <div {{ vue_component('HistoryList', {
                 histories: initialHistories
