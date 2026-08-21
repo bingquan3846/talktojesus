@@ -1,0 +1,40 @@
+body {
+  background-color: #87CEEBFF;
+  font-size: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+b {
+  font-weight: bold;
+}
+
+.header {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+}
+.header a {
+  text-decoration: none;
+  font-size: 20px;
+  border: 2px solid #04AA6D;
+  font-weight: bold;
+  color: #04AA6D;
+  background: #ffffff;
+  padding: 5px 10px;
+}
+.header a:hover {
+  color: #ffffff;
+  background: #04AA6D;
+}
+
+strong {
+  font-weight: bold;
+}

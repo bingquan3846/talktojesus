@@ -38,3 +38,30 @@
 #chat-histories ul li {
   margin: 15px 0;
 }
+
+.btn {
+  background-color: #87CEEBFF;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.btn:hover {
+  background-color: #04AA6D;
+}
+
+.btn-danger {
+  background-color: #FF0000;
+  color: #ffffff;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.btn-danger:hover {
+  background-color: #8B0000;
+}

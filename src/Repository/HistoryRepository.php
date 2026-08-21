@@ -40,4 +40,12 @@ class HistoryRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+
+    public function findBySortedByDate(string $order = 'DESC'): array
+    {
+        return $this->createQueryBuilder('h')
+            ->orderBy('h.createDate', $order)
+            ->getQuery()
+            ->getResult();
+    }
 }

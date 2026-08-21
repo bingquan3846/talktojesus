@@ -41,4 +41,28 @@
   }
 }
 
-
+.btn {
+    background-color: tcolor.$skeyblue;
+    color: tcolor.$white;
+    border: none;
+    padding: 10px ;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    &:hover {
+        background-color: tcolor.$green;
+    }
+}
+.btn-danger {
+    background-color: tcolor.$red;
+    color: tcolor.$white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    &:hover {
+        background-color: tcolor.$darkred;
+    }
+}

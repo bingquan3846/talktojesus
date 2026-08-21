@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Repository\HistoryRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -19,14 +20,19 @@ final class ChatController extends AbstractController
     #[Route('/chat/histories', name: '_histories')]
     public function histories(HistoryRepository $historyRepository, #[CurrentUser] ?User $user): Response
     {
-        if ($user instanceof User) {
-            $histories = $user->getHistories();
-        } else {
-            $histories = $historyRepository->findAll();
+        if(!$user) {
+            throw $this->createNotFoundException();
         }
-        //dump($histories->toArray());die;
+
+        if ($user instanceof User && in_array('ROLE_ADMIN', $user->getRoles(), true)) {
+            $histories = $historyRepository->findBySortedByDate();
+        
+        } else {
+            $histories = $user->getHistories();
+        }
+       
         return $this->render('chat/histories.html.twig', [
-            'initialHistories' => $histories->toArray(),
+            'initialHistories' => $histories,
         ]);
     }
     #[Route('/chat/history/{id}', name: '_history', requirements: ['id' => '\d+'])]
@@ -40,5 +46,20 @@ final class ChatController extends AbstractController
         return $this->render('chat/history.html.twig', [
             'history' => $history,
         ]);
+    }
+    #[Route('/chat/history/delete/{id}', name: '_history_delete', requirements: ['id' => '\d+'])]
+    public function deleteHistory(int $id, HistoryRepository $historyRepository, EntityManagerInterface $entityManager): Response
+    {
+        $history = $historyRepository->find($id);
+        if(!$history) {
+            throw $this->createNotFoundException();
+        }
+
+        $this->denyAccessUnlessGranted('POST_DELETE', $history);
+
+        $entityManager->remove($history);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('app_chat_histories');
     }
 }
