@@ -14,7 +14,7 @@ final class WikipediaSearchController extends AbstractController
     #[Route('/wikipedia/search', name: 'app_wikipedia_search')]
     public function index(Wikipedia $wikipedia,CacheInterface $cache ): Response
     {
-        $query = 'bao';
+        $query = 'branchery';
         $allItems = $cache->get($query . '_all', function (ItemInterface $item) use ($wikipedia, $query) {
             $item->expiresAfter(3600);
             $allItems = $wikipedia->search($query);
@@ -26,6 +26,7 @@ final class WikipediaSearchController extends AbstractController
             $articles = $wikipedia->article($query);
             return $articles;
         });
+
 
         return $this->render('wikipedia_search/index.html.twig', [
             'query' => $query,
