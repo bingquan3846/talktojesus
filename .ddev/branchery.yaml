@@ -1,0 +1,14 @@
+# How this project's worktrees are built.
+#
+# What "symfony" does is a file in the image, in this same grammar:
+#   ddev branchery config:example --profile=symfony --full
+# Everything written here stands over it. In a moment,
+# "inherit: profile" is where that file does its own work; left out,
+# the moment is what stands here and no more.
+profile: symfony
+
+# docroot: .build/public   # what is served, where it is not public
+# bin: .build/bin          # where this project's binaries are
+# install:
+#   - inherit: profile
+#   - npm ci

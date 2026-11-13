@@ -1,0 +1,4 @@
+# Written by Branchery. Rewritten on every install; edits do not survive.
+# One wildcard covers every worktree: <worktree>.talktojesus.ddev.site
+additional_hostnames:
+    - "*.talktojesus"
